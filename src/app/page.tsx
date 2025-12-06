@@ -196,9 +196,6 @@ export default function Home() {
               <MessageCircle size={20} style={{ marginRight: '8px' }} />
               문의하기
             </Link>
-            <Link href="/contact" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1rem 2rem' }}>
-              견적 문의하기
-            </Link>
           </div>
         </div>
       </section>
