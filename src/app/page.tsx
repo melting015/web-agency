@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import { Layout, Smartphone, Zap, CheckCircle, PenTool, Search, Rocket, MessageCircle, FileText, Check, Layers } from 'lucide-react';
+import { Layout, Smartphone, Zap, CheckCircle, PenTool, Search, Rocket, MessageCircle, FileText, Check, Layers, Lock } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -137,8 +137,8 @@ export default function Home() {
             <div className={styles.featureItem}>
               <Smartphone className={styles.checkIcon} size={24} />
               <div>
-                <h4>모바일 최적화</h4>
-                <p>PC, 태블릿, 모바일 어디서나 완벽하게 보이는 반응형 웹입니다.</p>
+                <h4>모바일 & 반응형 홈페이지</h4>
+                <p>PC, 태블릿, 모바일 어디서나 완벽하게 보이는 최신 반응형 웹입니다.</p>
               </div>
             </div>
             <div className={styles.featureItem}>
@@ -153,6 +153,20 @@ export default function Home() {
               <div>
                 <h4>All-in-One 서비스</h4>
                 <p>기획부터 디자인, 개발, 사후관리까지 한 번에 해결하세요.</p>
+              </div>
+            </div>
+            <div className={styles.featureItem}>
+              <Lock className={styles.checkIcon} size={24} />
+              <div>
+                <h4>SSL 보안 인증</h4>
+                <p>모든 데이터가 암호화되어 전송되는 보안 인증서(SSL)를 기본 제공합니다.</p>
+              </div>
+            </div>
+            <div className={styles.featureItem}>
+              <Search className={styles.checkIcon} size={24} />
+              <div>
+                <h4>검색 엔진 최적화 (SEO)</h4>
+                <p>구글, 네이버 등 주요 검색 엔진에 사이트가 잘 노출되도록 최적화합니다.</p>
               </div>
             </div>
           </div>

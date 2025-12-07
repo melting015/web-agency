@@ -3,9 +3,18 @@ import Image from 'next/image';
 import styles from '@/styles/Pages.module.css';
 import { ArrowRight, Star, ExternalLink, BarChart } from 'lucide-react';
 
+interface Project {
+    id: number;
+    title: string;
+    cat: string;
+    desc: string;
+    image: string;
+    link?: string;
+}
+
 export default function Portfolio() {
-    const projects = [
-        { id: 1, title: 'TechFlow Enterprise', cat: '기업형', desc: 'IT 솔루션 기업의 신뢰감을 높이는 다크 모드 디자인', image: '/portfolio-1.png' },
+    const projects: Project[] = [
+        { id: 1, title: 'TechFlow Enterprise', cat: '기업형', desc: 'IT 솔루션 기업의 신뢰감을 높이는 다크 모드 디자인', image: '/portfolio-1.png', link: 'https://next--core.vercel.app/' },
         { id: 2, title: 'Urban Mode', cat: '쇼핑몰', desc: 'MZ세대를 타겟팅한 감각적인 패션 커머스', image: '/portfolio-2.png' },
         { id: 3, title: 'Artist J', cat: '포트폴리오', desc: '작가의 작품이 돋보이는 갤러리형 레이아웃', image: '/portfolio-3.png' },
         { id: 4, title: 'Cafe Morning', cat: '브랜드', desc: '따뜻한 감성을 담은 로컬 카페 브랜딩', image: '/portfolio-4.png' },
@@ -48,7 +57,13 @@ export default function Portfolio() {
                                 </div>
                                 <h3>{project.title}</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '1rem' }}>{project.desc}</p>
-                                <Link href="#" className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}>
+                                <Link
+                                    href={project.link || "#"}
+                                    className="btn btn-outline"
+                                    style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+                                    target={project.link ? "_blank" : undefined}
+                                    rel={project.link ? "noopener noreferrer" : undefined}
+                                >
                                     자세히 보기 <ArrowRight size={14} style={{ marginLeft: 4 }} />
                                 </Link>
                             </div>
@@ -91,17 +106,33 @@ export default function Portfolio() {
             <section className="container mb-4">
                 <h2 className="text-center mb-4">생생한 고객 후기</h2>
                 <div className={styles.reviewGrid}>
-                    {[1, 2, 3].map(i => (
+                    {[
+                        {
+                            text: "다크 모드 디자인으로 IT 기업의 전문성을 완벽하게 표현해주셨어요. 고객사들이 사이트를 보고 신뢰도가 높아졌다는 피드백을 많이 받고 있습니다!",
+                            name: "이*준 대표님",
+                            project: "TechFlow Enterprise"
+                        },
+                        {
+                            text: "MZ세대 타겟 쇼핑몰을 만들고 싶었는데, 트렌디한 디자인과 직관적인 UI로 구매 전환율이 3배나 올랐습니다. 매출 증가에 큰 도움이 됐어요!",
+                            name: "박*영 대표님",
+                            project: "Urban Mode"
+                        },
+                        {
+                            text: "작품 중심의 갤러리형 포트폴리오 사이트를 원했는데, 제 작품이 더 돋보이게 만들어주셨어요. 전시 문의가 2배 이상 늘었습니다!",
+                            name: "정*아 작가님",
+                            project: "Artist J"
+                        }
+                    ].map((review, i) => (
                         <div key={i} className={styles.reviewCard}>
                             <div className={styles.stars}>
                                 {[1, 2, 3, 4, 5].map(s => <Star key={s} size={16} fill="#fbbf24" style={{ display: 'inline-block' }} />)}
                             </div>
-                            <p className="mb-2">"처음 제작해보는데 친절하게 설명해주셔서 좋았습니다. 결과물도 기대 이상이에요!"</p>
+                            <p className="mb-2">"{review.text}"</p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                 <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#333' }}></div>
                                 <div>
-                                    <h5 style={{ margin: 0 }}>김*수 대표님</h5>
-                                    <span style={{ fontSize: '0.8rem', color: '#666' }}>쇼핑몰 제작</span>
+                                    <h5 style={{ margin: 0 }}>{review.name}</h5>
+                                    <span style={{ fontSize: '0.8rem', color: '#666' }}>{review.project}</span>
                                 </div>
                             </div>
                         </div>
