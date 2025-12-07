@@ -51,15 +51,13 @@ ${ref ? `참고: ${ref}` : ''}
 
         console.log('SMS 전송 시도:', smsText);
 
-        // Solapi v4 API 호출 (올바른 형식)
+        // Solapi v4 API 호출 (단일 메시지 전송 형식으로 수정)
         const requestBody = {
-            messages: [
-                {
-                    to: RECEIVER_NUMBER,
-                    from: SENDER_NUMBER,
-                    text: smsText
-                }
-            ]
+            message: {
+                to: RECEIVER_NUMBER,
+                from: SENDER_NUMBER,
+                text: smsText
+            }
         };
 
         console.log('Request Body:', JSON.stringify(requestBody, null, 2));
