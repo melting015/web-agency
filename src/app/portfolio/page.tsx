@@ -14,7 +14,7 @@ interface Project {
 
 export default function Portfolio() {
     const projects: Project[] = [
-        { id: 1, title: 'TechFlow Enterprise', cat: '기업형', desc: 'IT 솔루션 기업의 신뢰감을 높이는 다크 모드 디자인', image: '/portfolio-1.png', link: 'https://next--core.vercel.app/' },
+        { id: 1, title: 'NextCore', cat: '기업형', desc: '작은 기업을 위한 업무 자동화·클라우드·데이터 통합 디지털 전환 솔루션 제공 B2B 서비스', image: '/portfolio-1.png', link: 'https://next--core.vercel.app/' },
         { id: 2, title: 'Urban Mode', cat: '쇼핑몰', desc: 'MZ세대를 타겟팅한 감각적인 패션 커머스', image: '/portfolio-2.png' },
         { id: 3, title: 'Artist J', cat: '포트폴리오', desc: '작가의 작품이 돋보이는 갤러리형 레이아웃', image: '/portfolio-3.png' },
         { id: 4, title: 'Cafe Morning', cat: '브랜드', desc: '따뜻한 감성을 담은 로컬 카페 브랜딩', image: '/portfolio-4.png' },
@@ -108,9 +108,9 @@ export default function Portfolio() {
                 <div className={styles.reviewGrid}>
                     {[
                         {
-                            text: "다크 모드 디자인으로 IT 기업의 전문성을 완벽하게 표현해주셨어요. 고객사들이 사이트를 보고 신뢰도가 높아졌다는 피드백을 많이 받고 있습니다!",
+                            text: "3주 만에 완성된 프로페셔널한 웹사이트! 디자인 퀄리티, 속도, 반응형 모두 완벽합니다. 특히 다크 모드 UI가 우리 브랜드 정체성을 정확히 표현해줬어요.",
                             name: "이*준 대표님",
-                            project: "TechFlow Enterprise"
+                            project: "NextCore"
                         },
                         {
                             text: "MZ세대 타겟 쇼핑몰을 만들고 싶었는데, 트렌디한 디자인과 직관적인 UI로 구매 전환율이 3배나 올랐습니다. 매출 증가에 큰 도움이 됐어요!",
